@@ -19,7 +19,7 @@ class Command(BaseCommand):
                     char_code=instance['CharCode'], name=instance['Name']
                 )
                 Handbook.objects.get_or_create(
-                    currency=obj, date=date, value=instance['Value']
+                    currency=obj, date=date, value=float(instance['Value'])
                 )
             except Exception as error:
                 print(f'Ошибка заполнения базы данных. {error}')
