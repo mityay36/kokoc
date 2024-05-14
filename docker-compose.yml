@@ -15,7 +15,7 @@ services:
 
   backend:
     build:
-      context: longevity
+      context: kokoc_app
       dockerfile: Dockerfile
     volumes:
       - static:/backend_static
