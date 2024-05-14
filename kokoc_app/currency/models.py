@@ -22,7 +22,7 @@ class Handbook(models.Model):
         related_name='currency', verbose_name='Валюта'
     )
     date = models.DateField('Дата')
-    value = models.IntegerField('Стоимость')
+    value = models.FloatField('Стоимость')
 
     class Meta:
         ordering = ['-date', ]
