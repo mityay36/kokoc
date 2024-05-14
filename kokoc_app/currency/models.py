@@ -22,7 +22,8 @@ class Handbook(models.Model):
         related_name='currency', verbose_name='Валюта'
     )
     date = models.DateField('Дата')
-    value = models.FloatField('Стоимость')
+    value = models.DecimalField('Стоимость', decimal_places=2, max_digits=10
+)
 
     class Meta:
         ordering = ['-date', ]
