@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Rates</title>
+</head>
+<body>
+    <h1>Currency Rates</h1>
+
+    <form method="get" action="">
+        <label for="date">Select Date:</label>
+        <select id="date" name="date">
+            {% for date in dates %}
+                <option value="{{ date|date:'Y-m-d' }}" {% if date == selected_date %}selected{% endif %}>{{ date }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Show Rates</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rate in currency_rates %}
+                <tr>
+                    <td>{{ rate.currency }}</td>
+                    <td>{{ rate.value }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
